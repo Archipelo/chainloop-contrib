@@ -401,6 +401,7 @@ chainloop config save \
 | `controlplane.sqlProxy.enabled`          | Enable sidecar to connect to DB via Google Cloud SQL proxy                                            | `false` |
 | `controlplane.sqlProxy.connectionName`   | Google Cloud SQL connection name                                                                      | `""`    |
 | `controlplane.sqlProxy.resources`        | Sidecar container resources                                                                           | `{}`    |
+| `controlplane.sqlProxy.affinityEnabled`  | Is the Node Affinity enabled                                                                          | `true`  |
 
 ### Control Plane Authentication
 

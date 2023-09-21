@@ -155,6 +155,8 @@ controlplane:
     connectionName: ""
     ## @param controlplane.sqlProxy.resources Sidecar container resources
     resources: {}
+    ## @param controlplane.sqlProxy.affinityEnabled specifies if the node affinity is enabled for the SQL proxy
+    affinityEnabled: true
 
   ## @section Control Plane Authentication
   auth:

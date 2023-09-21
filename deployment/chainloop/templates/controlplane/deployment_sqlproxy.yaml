@@ -17,13 +17,15 @@ spec:
       labels:
         {{- include "chainloop.sql-proxy.selectorLabels" . | nindent 8 }}
     spec:
+      {{ if .Values.controlplace.sqlProxy.affinityEnabled }}
       affinity:
         podAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
+        requiredDuringSchedulingIgnoredDuringExecution:
           - labelSelector:
               matchLabels:
                 app.kubernetes.io/component: controlplane
             topologyKey: kubernetes.io/hostname
+      {{- end}}
       {{- with .Values.controlplane.image.pullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
